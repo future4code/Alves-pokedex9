@@ -1,8 +1,14 @@
-import React from 'react'
+import { useNavigate } from "react-router-dom"
 
 
-export default function Coordinator() {
-  return (
-    <div>Coordinator</div>
-  )
+export const goToHome = (navigate) => {
+  navigate("/")
+}
+
+export const goToPokedex = (navigate) => {
+  navigate("/pokedex")
+}
+
+export const goToDetails = (navigate) => {
+  navigate("/details/:id")
 }

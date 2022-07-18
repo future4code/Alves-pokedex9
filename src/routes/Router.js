@@ -8,10 +8,10 @@ export default function Router() {
   return (
     <BrowserRouter>
         <Routes>
-            <Route index element={<Home />}/>
+            <Route index element={<Home />} />
             <Route path='details/:id' element={<DetailsPage />} />
             <Route path='pokedex' element={<Pokedex />} />
         </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
