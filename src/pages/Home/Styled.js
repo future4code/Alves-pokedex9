@@ -5,7 +5,7 @@ export const MainDiv = styled.div`
     flex-direction: column;
     padding: 30px;
     color: white;
-    margin-top: 160px;
+    /* margin-top: 160px; */
     background-color: #5e5e5e;
 `
 export const CardsDiv = styled.div`
