@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
-export const backDetails = styled.div `
+export const BackDetails = styled.div `
+margin-top: 160px;
 position: absolute;
 width: 1389.14px;
 height: 663px;
@@ -10,7 +11,7 @@ background: #729F92;
 border-radius: 37.8857px;
 `
 
-export const pngWing = styled.img `
+export const PngWing = styled.img `
 position: absolute;
 width: 665.31px;
 height: 665.31px;
@@ -22,7 +23,7 @@ opacity: 0.17;
 transform: rotate(30deg);
 `
 
-export const pokemon = styled.img `
+export const Pokemon = styled.img `
 position: absolute;
 width: 270px;
 height: 270px;
@@ -32,7 +33,7 @@ top: 216px;
 background: url(image.png);
 `
 
-export const spriteFront = styled.img `
+export const SpriteFront = styled.img `
 position: absolute;
 width: 282px;
 height: 282px;
@@ -44,7 +45,7 @@ border: 2px solid #FFFFFF;
 border-radius: 8px;
 `
 
-export const spriteBack = styled.img `
+export const SpriteBack = styled.img `
 position: absolute;
 width: 282px;
 height: 282px;
@@ -55,7 +56,7 @@ background: url(image.png), #FFFFFF;
 border: 2px solid #FFFFFF;
 border-radius: 8px;
 `
-export const stats = styled.div `
+export const Stats = styled.div `
 position: absolute;
 width: 343px;
 height: 613px;
@@ -66,7 +67,7 @@ background: #FFFFFF;
 border-radius: 12px;
 `
 
-export const statsImg = styled.img `
+export const StatsImg = styled.img `
 position: absolute;
 width: 307px;
 height: 257px;
@@ -76,7 +77,7 @@ top: 43px;
 background: url(image.png);
 `
 
-export const moves = styled.div `
+export const Moves = styled.div `
 position: absolute;
 width: 292px;
 height: 453px;
