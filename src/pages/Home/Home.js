@@ -14,6 +14,7 @@ export default function Home() {
 
   const [pokemonType, setPokemonType] = useState('')
   const [pokemonsList, setpokemonsList] = useState([])
+  const [typesList, setTypesList] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -28,12 +29,12 @@ export default function Home() {
       }
     })
   }
-  const catchDetails = useRequestData(`${BaseUrl}/1/`)
+ 
+
 
   const catchId = (id) => {
     const newId = id.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '')
     setIdDetails(newId)
-    // console.log(newId)
     return newId
   }
   const chooseScreen = () => {
@@ -53,9 +54,6 @@ export default function Home() {
               <Card key={pokemon.name}
                 name={pokemon.name}
                 id={`# ${catchId(pokemon.url)}`}
-                type='Poison'
-                icon='ℹ'
-                img=''
                 details={
                   <div>
                     <button onClick={() => goToDetails(navigate, catchId(pokemon.url))}>Detalhes</button>
