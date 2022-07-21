@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 
 export const MainDiv = styled.div`
+    position: relative;
     display: grid;
     grid-template-columns: 50% 50%;
     width: 390px;
     height: 210px;
-    left: 0px;
-    top: 0px;
     background: #729F92;
     border-radius: 12px;
     padding: 15px;
     padding-top: 8px;
+    margin-bottom: 40px;
 `
 export const InfoDiv = styled.div`
     button{
@@ -68,7 +68,9 @@ export const PokemonDiv = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
     button{
+        position: relative;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -83,7 +85,18 @@ export const PokemonDiv = styled.div`
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
-        margin-top: 150px;
+        bottom:30px;
         cursor: pointer;
     }
+`
+export const PokemonImg = styled.img`
+    position: relative;
+    width: 193px;
+    height: 193px;
+    bottom:80px;
+`
+export const PokeballImg = styled.img`
+    position: absolute;
+    width: 240px;
+    bottom: 20px;
 `
