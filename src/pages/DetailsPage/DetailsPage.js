@@ -13,10 +13,10 @@ import useRequestData from '../../hooks/useRequestData'
 export default function DetailsPage() {
   const navigate = useNavigate()
 
-  const { pokemons, setPokemons } = useContext(GlobalContext)
-  const detailList = useRequestData(`${BaseUrl}/1/`)
-  const abilities = detailList.abilities
-  console.log(abilities)
+  const { pokemons, setPokemons, idDetails } = useContext(GlobalContext)
+  const detailList = useRequestData(`${BaseUrl}/${idDetails}/`)
+  console.log(detailList) 
+  // const abilities = detailList.abilities
   
   const chooseScreen = () => {
     // switch (pokemonsList) {

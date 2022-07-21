@@ -9,21 +9,20 @@ export const GlobalState = (props) => {
     const [pokedex, setPokedex] = useState([])
     const [pokemons, setPokemons] = useState([])
     const [details, setDetails] = useState([])
+    const [idDetails, setIdDetails] = useState([])
 
 
-    const newPokemons = useRequestData(`${BaseUrl}?limit=20&offset=0`)
+    const newPokemons = useRequestData(`${BaseUrl}`)
     useEffect(() => {
         setPokemons(newPokemons)
         setPokedex(newPokemons.results)
     })
 
     const values = {
-        pokedex,
-        setPokedex,
-        pokemons,
-        setPokemons,
-        details,
-        setDetails,
+        pokedex, setPokedex,
+        pokemons, setPokemons,
+        details, setDetails,
+        idDetails, setIdDetails,
     }
 
     return (
