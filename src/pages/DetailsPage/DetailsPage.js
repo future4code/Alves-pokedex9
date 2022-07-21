@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { goToHome } from '../../routes/Coordinator'
 import Header from '../../components/Header/Header'
 import { BackDetails, PngWing, Pokemon, SpriteFront, SpriteBack, Stats, StatsImg, Moves } from './Styled'
-import Header from '../../components/Header/Header'
-import { BackDetails, PngWing, Pokemon, SpriteFront, SpriteBack, Stats, StatsImg, Moves } from './Styled'
 import { GlobalContext } from '../../global/GlobalContext'
 import { BaseUrl } from '../../contants/urls'
 
@@ -12,13 +10,13 @@ export default function DetailsPage() {
   const navigate = useNavigate()
 
   const { pokemons, setPokemons } = useContext(GlobalContext)
+
   return (
     <MainDiv>
       <Header />
       <h1>DetailsPage</h1>
       <button onClick={() => goToHome(navigate)}>Todos os Pokémons</button>
-      <BackDetails>
-
+      <BackDetails>  
         {pokemons.map((pokemon) => {
           return (
             <>
