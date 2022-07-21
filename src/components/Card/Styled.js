@@ -77,15 +77,13 @@ export const PokemonDiv = styled.div`
         border: 0;
         width: 146px;
         height: 38px;
-
-        background: #FFFFFF;
         border-radius: 8px;
-
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
-        margin-top: 150px
+        margin-top: 150px;
+        cursor: pointer;
     }
 `

@@ -9,19 +9,19 @@ export default function Card(props) {
         <MainDiv>
             <InfoDiv>
                 <span>{props.id}</span>
-                <p><b>{props.name}</b></p>
+                <p><b>{props.name[0].toUpperCase() + props.name.substring(1)}</b></p>
                 <TypeDiv>
                     <Type>{props.icon} {props.type}</Type>
                     <Type>{props.icon} {props.type}</Type>
                 </TypeDiv>
-                <button onClick={() => goToDetails(navigate)}>Detalhes</button>
+                {props.details}
             </InfoDiv>
             <PokemonDiv>
                 <img
                     alt='Pokemon'
                     src={props.img}
                 />
-                <button>Capturar!</button>
+                {props.button}
             </PokemonDiv>
         </MainDiv>
     )
