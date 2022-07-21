@@ -1,18 +1,20 @@
 import React from 'react'
-import { MainDiv } from './Styled'
+import { MainDiv, ImgStyled} from './Styled'
 import pokemon from '../../assets/pokemon.png'
 import { useNavigate } from 'react-router-dom'
 import { goToPokedex } from '../../routes/Coordinator'
 
-export default function Header() {
+export default function Header(props) {
   const navigate = useNavigate()
 
   return (
     <MainDiv>
-        <img
+        {props.buttonLeft}
+        <ImgStyled
         src={pokemon}
         />
-        <button onClick={() => goToPokedex(navigate)}>Pokedéx</button>
+        {props.buttonRight}
+        {/* <button onClick={() => goToPokedex(navigate)}>Pokedéx</button> */}
     </MainDiv>
   )
 }

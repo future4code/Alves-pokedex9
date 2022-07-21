@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const BackDetails = styled.div `
 margin-top: 160px;
 position: absolute;
-width: 1389.14px;
+width: 100%;
 height: 663px;
 left: 0px;
 top: 0px;

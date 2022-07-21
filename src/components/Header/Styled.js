@@ -7,13 +7,6 @@ export const MainDiv = styled.div`
     left: 0px;
     top: 0px;
     background: #FFFFFF;
-    img{
-        position: absolute;
-        width: 307px;
-        height: 113px;
-        left: 37%;
-        top: 21px;
-    }
     button{
         color: white;
         font-size: 24px;
@@ -34,4 +27,12 @@ export const MainDiv = styled.div`
         border: 0;
         cursor: pointer;
     }
+
+`
+export const ImgStyled = styled.img`
+        position: absolute;
+        width: 307px;
+        height: 113px;
+        left: 37%;
+        top: 21px;
 `

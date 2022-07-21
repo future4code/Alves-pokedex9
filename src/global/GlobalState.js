@@ -8,11 +8,13 @@ const Provider = GlobalContext.Provider
 export const GlobalState = (props) => {
     const [pokedex, setPokedex] = useState([])
     const [pokemons, setPokemons] = useState([])
+    const [details, setDetails] = useState([])
+
 
     const newPokemons = useRequestData(`${BaseUrl}?limit=20&offset=0`)
-    
-    useEffect(()=>{
+    useEffect(() => {
         setPokemons(newPokemons)
+        setPokedex(newPokemons.results)
     })
 
     const values = {
@@ -20,6 +22,8 @@ export const GlobalState = (props) => {
         setPokedex,
         pokemons,
         setPokemons,
+        details,
+        setDetails,
     }
 
     return (
