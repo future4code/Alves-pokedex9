@@ -10,8 +10,9 @@ import useRequestData from '../../hooks/useRequestData'
 import { BaseUrl } from '../../contants/urls'
 
 export default function Home() {
-  const { pokemons, details, setDetails, pokedex, setPokedex } = useContext(GlobalContext)
-  const [id, setId] = useState([])
+  const { pokemons, details, setDetails, pokedex, setPokedex, idDetails, setIdDetails } = useContext(GlobalContext)
+
+  const [pokemonType, setPokemonType] = useState('')
   const [pokemonsList, setpokemonsList] = useState([])
   const navigate = useNavigate()
 
@@ -28,9 +29,11 @@ export default function Home() {
     })
   }
   const catchDetails = useRequestData(`${BaseUrl}/1/`)
-  
+
   const catchId = (id) => {
     const newId = id.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '')
+    setIdDetails(newId)
+    // console.log(newId)
     return newId
   }
   const chooseScreen = () => {
@@ -61,7 +64,7 @@ export default function Home() {
                 button={
                   <div>
                     <button
-                      onClick={() => catchPokemon(pokemon)}
+                      onClick={() => catchPokemon(pokemon.name)}
                     >Capturar!</button>
                   </div>
                 }
