@@ -11,26 +11,50 @@ import { BaseUrl } from '../../contants/urls'
 
 export default function Home() {
   const { pokemons, details, setDetails, pokedex, setPokedex, idDetails, setIdDetails } = useContext(GlobalContext)
-
-  const [pokemonType, setPokemonType] = useState('')
   const [pokemonsList, setpokemonsList] = useState([])
-  const [typesList, setTypesList] = useState([])
   const navigate = useNavigate()
-
   useEffect(() => {
     setpokemonsList(pokemons.results)
   }, [pokemons])
-
-
+  useEffect(() => {
+    localStorage.setItem('pokedex', JSON.stringify(pokedex))
+  }, [pokedex])
+  
   const catchPokemon = (name) => {
+    const pokeLocalS = localStorage.getItem('pokedex')
+
+    const Name = { "name":name }
+    // console.log(pokeLocalS)
+    // const bbb = Name
+    // const aaa = 'name'
+    // if (aaa.search(Name) === -1) {
+    //   console.log('É diferente')
+    // } else {
+    //   console.log('é igual')
+    // }
+
+    // console.log("Nome pego pelo botão Capturar:", name)
+
     pokedex.map((pokemon) => {
-      if (name !== pokemon) {
-        return setPokedex([...pokedex, name])
+      // console.log(pokemon.name)
+      switch (name) {
+        case pokemon.name:
+          console.log('igual')
+          break;
+        default:
+          console.log('diferente')
       }
     })
-  }
- 
 
+    // if (name === pokemon.name) {
+    //   console.log('a')
+
+    // }if(name !== pokemon.name){
+    //   console.log('b')
+
+    // }
+    setPokedex([...pokedex, { "name": name }])
+  }
 
   const catchId = (id) => {
     const newId = id.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '')
@@ -41,11 +65,11 @@ export default function Home() {
     switch (pokemonsList) {
       case undefined:
         return (
-          <h1>Carregando</h1>
+          <h1>Carregando...</h1>
         )
       case []:
         return (
-          <h1>Carregando</h1>
+          <h1>Carregando...</h1>
         )
       default:
         return (

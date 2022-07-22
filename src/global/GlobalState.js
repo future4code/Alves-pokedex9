@@ -11,12 +11,21 @@ export const GlobalState = (props) => {
     const [details, setDetails] = useState([])
     const [idDetails, setIdDetails] = useState([])
 
-
     const newPokemons = useRequestData(`${BaseUrl}`)
-    useEffect(() => {
+
+    useEffect(()=>{
         setPokemons(newPokemons)
-        setPokedex(newPokemons.results)
     })
+    useEffect(() => {
+        const pokedexLocalStorage = localStorage.getItem('pokedex')
+        if (pokedexLocalStorage) {
+            const arrayPokedex = JSON.parse(pokedexLocalStorage)
+            setPokedex(arrayPokedex)
+        } else {
+            setPokedex([])
+            localStorage.setItem('pokedex', JSON.stringfy([]))
+        }
+    }, [])
 
     const values = {
         pokedex, setPokedex,

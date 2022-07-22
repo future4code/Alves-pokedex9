@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+const chooseBackground = (props) =>{
+    switch(props.type){
+        case 'poison':
+            return 
+    }
+}
+
 export const MainDiv = styled.div`
     position: relative;
     display: grid;
@@ -58,7 +65,7 @@ export const Type = styled.div`
     height: 31px;
     left: 129px;
     top: 89px;
-
+    
     background: #70B873;
     border: 1px dashed rgba(255, 255, 255, 0.47);
     border-radius: 8px;
