@@ -7,8 +7,9 @@ export const MainDiv = styled.div`
     left: 0px;
     top: 0px;
     background: #FFFFFF;
-    button{
-        color: white;
+`
+export const PokedexButton = styled.button`
+    color: white;
         font-size: 24px;
         display: flex;
         flex-direction: row;
@@ -26,8 +27,6 @@ export const MainDiv = styled.div`
         border-radius: 8px;
         border: 0;
         cursor: pointer;
-    }
-
 `
 export const ImgStyled = styled.img`
         position: absolute;

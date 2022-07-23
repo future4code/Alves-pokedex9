@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Backgound from '../../assets/background.jpg'
 
 export const MainDiv = styled.div`
     display: flex;
@@ -6,6 +7,7 @@ export const MainDiv = styled.div`
     padding: 30px;
     color: white;
     background-color: #5e5e5e;
+    min-height: 415px;
 `
 export const CardsDiv = styled.div`
     display: grid;
@@ -31,4 +33,15 @@ export const HeaderDiv = styled.div`
 `
 export const ButtonDelete = styled.button`
     background-color: #FF6262;
+`
+export const EmptyPokDiv = styled.div`
+    position: absolute;
+    width: 95%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    background-image: url(${Backgound});
+    img{
+        width: 400px;
+    }
 `

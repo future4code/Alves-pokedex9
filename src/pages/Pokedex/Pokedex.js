@@ -1,17 +1,18 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { goToHome, goToDetails } from '../../routes/Coordinator'
-import { CardsDiv, HeaderDiv, MainDiv, ButtonDelete } from './Styled'
+import { CardsDiv, HeaderDiv, MainDiv, ButtonDelete, EmptyPokDiv } from './Styled'
 import Card from '../../components/Card/Card'
 import { useContext } from 'react'
 import { GlobalContext } from '../../global/GlobalContext'
 import Header from '../../components/Header/Header'
 import arrow from '../../assets/arrow.png'
 import { useState, useEffect } from 'react'
+import Swal from 'sweetalert2'
+import PokedexEmpty from '../../assets/pokedex.png'
 
 export default function Pokedex() {
-  const { setIdDetails } = useContext(GlobalContext)
-  const [pokedex, setPokedex] = useState()
+  const { setIdDetails, pokedex, setPokedex } = useContext(GlobalContext)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -23,7 +24,6 @@ export default function Pokedex() {
       setPokedex([])
       localStorage.setItem('pokedex', JSON.stringfy([]))
     }
-    console.log(pokedex)
   }, [])
   const catchId = (id) => {
     setIdDetails(id)
@@ -31,20 +31,36 @@ export default function Pokedex() {
   }
 
   const deletePokemon = (name) => {
-    if (window.confirm('Tem certeza que deseja excluir?')) {
-      const newPokedex = pokedex.filter((pokemon) => {
-        return pokemon.name !== name
-      })
-      setPokedex(newPokedex)
+    const newPokedex = pokedex.filter((pokemon) => {
+      return pokemon.name !== name
+    })
+    setPokedex(newPokedex)
+    localStorage.setItem('pokedex', JSON.stringify(newPokedex))
+    Swal.fire({
+      title: 'Oh, no!',
+      text: 'O Pokémon foi removido da sua pokedex',
+      showConfirmButton: false,
+      timer: 1600
+    })
+  }
+  const chooseTitle = () => {
+    if (pokedex.length == 0) {
+      return (
+        <div>
+          <h1>Seu Pokédex está vazio</h1>
+          <EmptyPokDiv>
+            <img src={PokedexEmpty} alt='Pokedéx vazio' />
+          </EmptyPokDiv>
+        </div>
+      )
+    } else {
+      return <h1>Meus Pokémons</h1>
     }
-    localStorage.setItem('pokedex', JSON.stringify(pokedex))
   }
   const chooseScreen = () => {
     switch (pokedex) {
       case undefined:
         return <h1>Carregando...</h1>
-      case [-1]:
-        return <h1>Seu pokedex está vazio</h1>
       default:
         return (
           pokedex.map((pokemon) => {
@@ -79,10 +95,11 @@ export default function Pokedex() {
               src={arrow}
             />
             <p onClick={() => goToHome(navigate)}>Todos os Pokémons</p>
-          </HeaderDiv>}
+          </HeaderDiv>
+          }
       />
       <MainDiv>
-        <h1>Meus Pokémons</h1>
+        {chooseTitle()}
         <CardsDiv>
           {chooseScreen()}
         </CardsDiv>

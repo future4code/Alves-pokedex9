@@ -1,13 +1,12 @@
 import React, { useContext } from 'react'
 import Header from '../../components/Header/Header'
-import { MainDiv, CardsDiv } from './Styled'
+import { MainDiv, CardsDiv, PokedexButton } from './Styled'
 import Card from '../../components/Card/Card'
 import { GlobalContext } from '../../global/GlobalContext'
 import { useNavigate } from 'react-router-dom'
 import { goToPokedex, goToDetails } from '../../routes/Coordinator'
 import { useState, useEffect } from 'react'
-import useRequestData from '../../hooks/useRequestData'
-import { BaseUrl } from '../../contants/urls'
+import Swal from 'sweetalert2'
 
 export default function Home() {
   const { pokemons, details, setDetails, pokedex, setPokedex, idDetails, setIdDetails } = useContext(GlobalContext)
@@ -19,41 +18,33 @@ export default function Home() {
   useEffect(() => {
     localStorage.setItem('pokedex', JSON.stringify(pokedex))
   }, [pokedex])
-  
+
   const catchPokemon = (name) => {
     const pokeLocalS = localStorage.getItem('pokedex')
-
-    const Name = { "name":name }
-    // console.log(pokeLocalS)
-    // const bbb = Name
-    // const aaa = 'name'
-    // if (aaa.search(Name) === -1) {
-    //   console.log('É diferente')
-    // } else {
-    //   console.log('é igual')
-    // }
-
-    // console.log("Nome pego pelo botão Capturar:", name)
-
-    pokedex.map((pokemon) => {
-      // console.log(pokemon.name)
-      switch (name) {
-        case pokemon.name:
-          console.log('igual')
-          break;
-        default:
-          console.log('diferente')
+    const arrayPokedex = JSON.parse(pokeLocalS)
+    let equal = false
+    for (let i of arrayPokedex) {
+      if (name === i.name) {
+        equal = true
+        Swal.fire({
+          title: 'OPS!',
+          text: 'Esse Pokémon já está na Pokédex',
+          timer: 1800,
+          icon: 'warning',
+          showConfirmButton: false,
+        })
       }
-    })
-
-    // if (name === pokemon.name) {
-    //   console.log('a')
-
-    // }if(name !== pokemon.name){
-    //   console.log('b')
-
-    // }
-    setPokedex([...pokedex, { "name": name }])
+    }
+    switch (equal) {
+      case false:
+        Swal.fire({
+          showConfirmButton: false,
+          title: 'Gotcha',
+          text: 'O Pokémon foi adicionado a sua Pokédex',
+          timer: 1800,
+        })
+        setPokedex([...pokedex, { "name": name }])
+    }
   }
 
   const catchId = (id) => {
@@ -102,7 +93,7 @@ export default function Home() {
       <Header
         buttonRight={
           <div>
-            <button onClick={() => goToPokedex(navigate)}>Pokedéx</button>
+            <PokedexButton onClick={() => goToPokedex(navigate)}>Pokedéx</PokedexButton>
           </div>
         }
       />
