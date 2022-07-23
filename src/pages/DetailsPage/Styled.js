@@ -87,3 +87,21 @@ top: 184px;
 background: #FFFFFF;
 border-radius: 8px;
 `
+export const ButtonDelete = styled.button`
+    background-color: #FF6262;
+    color: white;
+        font-size: 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 10px;
+        position: absolute;
+        width: 287px;
+        height: 74px;
+        left:77%;
+        top: 41px;
+        border-radius: 8px;
+        border: 0;
+        cursor: pointer;
+`

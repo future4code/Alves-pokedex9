@@ -14,7 +14,6 @@ export default function Header(props) {
         src={pokemon}
         />
         {props.buttonRight}
-        {/* <button onClick={() => goToPokedex(navigate)}>Pokedéx</button> */}
     </MainDiv>
   )
 }

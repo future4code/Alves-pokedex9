@@ -1,19 +1,54 @@
 import styled from 'styled-components'
 
-const chooseBackground = (props) =>{
-    switch(props.type){
-        case 'poison':
-            return 
-    }
-}
 
 export const MainDiv = styled.div`
+    font-family: 'Poppins';
     position: relative;
     display: grid;
     grid-template-columns: 50% 50%;
     width: 390px;
     height: 210px;
-    background: #729F92;
+    background: ${props => {
+        const newType = () => {
+            return props.typeBackground.replace(',', '')
+        }
+        switch (newType()) {
+            case 'grass':
+                return '#729F92'
+            case 'fire':
+                return '#EAAB7D'
+            case 'water':
+                return '#71C3FF'
+            case 'bug':
+                return '#76A866'
+            case 'normal':
+                return '#BF9762'
+            case 'electic':
+                return '#FFC95E'
+            case 'ground':
+                return '#B6866F'
+            case 'fairy':
+                return '#BD7886'
+            case 'fighting':
+                return '#B0385A'
+            case 'psychic':
+                return '#E05E65'
+            case 'rock':
+                return '#9E8F65'
+            case 'ghost':
+                return '#7084CA'
+            case 'ice':
+                return '#48A497'
+            case 'dragon':
+                return '#004170'
+            case 'steel':
+                return '#B7B9D0'
+            case 'dark':
+                return '#55433C'
+            case 'flying':
+                return '#A891EC'
+        }
+    }};
     border-radius: 12px;
     padding: 15px;
     padding-top: 8px;
@@ -22,6 +57,7 @@ export const MainDiv = styled.div`
 export const InfoDiv = styled.div`
     button{
         cursor: pointer;
+        color: white;
         text-decoration-line: underline;
         border: 0 ;
         background-color: transparent;
@@ -31,7 +67,7 @@ export const InfoDiv = styled.div`
         font-size: 16px;
         line-height: 24px;
         position: absolute;
-        margin-top: 35px;
+        margin-top: 55px;
     }
     p{
         font-family: 'Inter';
@@ -62,14 +98,53 @@ export const Type = styled.div`
     font-size: 14px;
 
     width: 80px;
-    height: 31px;
+    height: 23px;
     left: 129px;
     top: 89px;
     
-    background: #70B873;
+    background: ${props => {
+        switch (props.typeBackground) {
+            case 'poison':
+                return '#AD61AE'
+            case 'grass':
+                return '#70B873'
+            case 'fire':
+                return '#F44900'
+            case 'water':
+                return '#33A4F5'
+            case 'bug':
+                return '#316520'
+            case 'normal':
+                return '#8A8A8A'
+            case 'electic':
+                return '#FFC95E'
+            case 'ground':
+                return '#B6866F'
+            case 'fairy':
+                return '#BD7886'
+            case 'fighting':
+                return '#B0385A'
+            case 'psychic':
+                return '#E05E65'
+            case 'rock':
+                return '#9E8F65'
+            case 'ghost':
+                return '#7084CA'
+            case 'ice':
+                return '#48A497'
+            case 'dragon':
+                return '#004170'
+            case 'steel':
+                return '#B7B9D0'
+            case 'dark':
+                return '#55433C'
+            case 'flying':
+                return '#6892B0'
+        }
+    }};
     border: 1px dashed rgba(255, 255, 255, 0.47);
     border-radius: 8px;
-` 
+`
 export const PokemonDiv = styled.div`
     display: flex; 
     flex-direction: column;
