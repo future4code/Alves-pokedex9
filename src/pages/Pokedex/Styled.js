@@ -44,4 +44,4 @@ export const EmptyPokDiv = styled.div`
     img{
         width: 400px;
     }
-`
+` 

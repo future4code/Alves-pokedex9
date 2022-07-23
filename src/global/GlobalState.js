@@ -12,7 +12,7 @@ export const GlobalState = (props) => {
     const [idDetails, setIdDetails] = useState([])
 
     const newPokemons = useRequestData(`${BaseUrl}`)
-
+ 
     useEffect(()=>{
         setPokemons(newPokemons)
     })

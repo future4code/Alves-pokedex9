@@ -25,7 +25,7 @@ export default function DetailsPage() {
     if (detailList.length === 0) {
       <h1>Carregando</h1>
     }
-    /*   switch (detailList) {
+    /*   switch (detailList) { 
          case undefined:
           return <h1>Carregando</h1>
          default:

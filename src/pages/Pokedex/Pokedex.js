@@ -51,7 +51,7 @@ export default function Pokedex() {
           <EmptyPokDiv>
             <img src={PokedexEmpty} alt='Pokedéx vazio' />
           </EmptyPokDiv>
-        </div>
+        </div> 
       )
     } else {
       return <h1>Meus Pokémons</h1>

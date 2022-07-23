@@ -31,4 +31,4 @@ export const PokedexButton = styled.button`
         border-radius: 8px;
         border: 0;
         cursor: pointer;
-`
+`  
