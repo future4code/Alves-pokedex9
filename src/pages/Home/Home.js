@@ -50,6 +50,7 @@ export default function Home() {
   const catchId = (id) => {
     const newId = id.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '')
     setIdDetails(newId)
+    localStorage.setItem('detailsPoke', newId)
     return newId
   }
   const chooseScreen = () => {
