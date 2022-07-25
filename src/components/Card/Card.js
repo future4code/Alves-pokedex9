@@ -25,7 +25,7 @@ import dragon from '../../assets/dragon.png'
 import steel from '../../assets/steel.png'
 import dark from '../../assets/dark.png'
 import flying from '../../assets/flying.png'
-import { type } from '@testing-library/user-event/dist/type'
+
 
 export default function Card(props) {
     const { pokedex } = useContext(GlobalContext)
