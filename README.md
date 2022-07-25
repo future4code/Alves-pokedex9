@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# POKEDEX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nome dos integrantes: 
+- Jóice dos Santos
+- Victor Leandro Eleuterio
 
-## Available Scripts
+Link do Surge: https://necessary-cap.surge.sh/
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Iniciando projeto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Foram definidos os layouts e implementado uma estilização básica para uma melhor visibilidade. Iniciamos os testes com a API, buscando uma compreensão mais detalhada sobre ela. Os testes iniciais foram feitos por meio da plataforma Postman e em seguida implementados no código.
 
-### `npm test`
+### Meio do projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Iniciamos a implementação de lógicas como a dos botões, renderizações condicional e outras funções da página, e integramos a API ao código.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Finalização do Projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Finalizando o projeto, melhoramos a estilização em geral das páginas e componentes, realizamos testes de funções e requisições, e por fim, foi realizado o debug necessário para o funcionamento das páginas. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Principais Dificuldades
 
-### `npm run eject`
+- Entender e implementar a API, principalmente na questão da home por serem duas requisições.
+- Debugar, apareceram alguns erros novos (para o grupo), erros bem confusos que acabaram atrasando um pouco o desenvolvimento do site.
+- Código limpo, com o surgimento dos bugs/erros tivemos o tempo mais curto, assim não conseguindo melhorar o código (principalmente o de correção de bugs 😥)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### O que funciona
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Renderização condicional dos botões no header.
+- Capturar os Pokemon.
+- Ver detalhes de cada Pokemon selecionado.
+- Pokédex salva em localState.
+- Exluir Pokemon na Pokedex, por meio dela e pela página de detalhes (caso haja esse pokemon na Pokedex).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### O que não funciona
+  
+- Background condicional da página de detalhes.
+- Gráfico de informações de cada Pokemon.
+- Responsividade para Mobile.
