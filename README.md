@@ -1,5 +1,5 @@
 # POKEDEX
-
+  
 Nome dos integrantes: 
 - Jóice dos Santos
 - Victor Leandro Eleuterio
